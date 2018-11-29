@@ -9,20 +9,20 @@ body {
 }
 
 #lastMonth {
-    float: left;
+
 }
 
 #nextMonth {
-    float: left;
+
 }
 
 #title {
-    float: left;
+
 }
 
 .day-div {
     text-align: center;
-    float: left;
+    display: inline-block;
     border: 1px solid green;
     width: 8%;
     margin-left: 1%;
@@ -36,7 +36,6 @@ body {
 }
 
 #calendar {
-    float: left;
     border: 3px solid black;
     border-radius: 10px;
     margin: 2%;
@@ -44,7 +43,6 @@ body {
 }
 
 #form {
-    float: right;
     border: solid;
     background: lightgray;
     font-family: monospace;
@@ -55,4 +53,5 @@ body {
 }
 .formInput{
     background: aliceblue;
+    margin: 1%;
 }
