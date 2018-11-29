@@ -1,12 +1,73 @@
-<html lang="en">
+<!DOCTYPE html>
+
+<!--
+Author: Samantha DeSmul and Keller Flint
+Date:11/29/2018
+Filename:final.html
+-->
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>Riding Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <div id="head-wrapper">
+        <button id="lastMonth">Last</button>
+        <h1 id="title">Riding Calendar</h1>
+        <button id="nextMonth">Next</button>
 
+        <h2>Month</h2>
+
+    </div>
+
+    <div id="calendar"></div>
+    <br>
+
+
+    <div id="form">
+        <div id="ridingForm">
+            <label> Riding Form
+                <button id="submitRide">Submit</button>
+                <label>Day
+                    <input type="text" id="dayRide" class="formInput">
+                </label>
+                <label>Hours
+                    <input type="text" id="hours" class="formInput">
+                </label>
+                <label>Discipline
+                    <input type="text" id="discipline" class="formInput">
+                </label>
+                <label>Notes
+                    <input type="text" id="notes" class="formInput">
+                </label>
+            </label>
+        </div>
+
+        <br>
+
+
+        <div id="purchaseForm">
+            <label>Purchase Form
+                <button id="submitPurchase">Submit</button>
+                <label>Day:
+                    <input type="text" id="dayPurchase" class="formInput">
+                </label>
+                <label>Price:
+                    <input type="text" id="price" class="formInput">
+                </label>
+                <label>Quantity:
+                    <input type="text" id="quantity" class="formInput">
+                </label>
+            </label>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
