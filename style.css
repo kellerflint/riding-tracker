@@ -41,17 +41,33 @@ body {
     margin: 2%;
     
 }
-
+#logButton{
+    padding: 1%;
+}
 #form {
-    border: solid;
-    background: lightgray;
     font-family: monospace;
-    border-color: cornflowerblue;
     width: 70%;
-    padding: 1em;
-    margin: 1em;
+    margin-left: 15%;
 }
 .formInput{
     background: aliceblue;
     margin: 1%;
+}
+#ridingForm{
+    background: lightgray;
+    border: solid;
+    border-color: cornflowerblue;
+    margin-bottom: 2%;
+}
+#purchaseForm{
+    background: lightgray;
+    border: solid;
+    border-color: cornflowerblue;
+    margin-bottom: 2%;
+}
+#futureForm{
+    background: lightgray;
+    border: solid;
+    border-color: cornflowerblue;
+    margin-bottom: 2%;
 }

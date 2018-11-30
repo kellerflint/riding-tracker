@@ -11,48 +11,57 @@ Filename:final.html
     <meta charset="utf-8">
     <title>Riding Calendar</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body>
-    <div id="head-wrapper">
-        <button id="lastMonth">Last</button>
-        <h1 id="title">Riding Calendar</h1>
-        <button id="nextMonth">Next</button>
 
-        <h2>Month</h2>
+    <h1 id="title">Riding Calendar</h1>
 
-    </div>
+    <h2 id="date">date</h2>
+    <button id="lastMonth">Last</button>
+    <input type="text" id="calendarDate">
+    <button id="nextMonth">Next</button>
+
 
     <div id="calendar"></div>
     <br>
-
-
+    <div id="logButton">
+        <button id="getForms">Log information</button>
+    </div>
     <div id="form">
+        <ul>
+            <li><a href="#ridingForm">Log a Ride</a></li>
+            <li><a href="#purchaseForm">Log a Purchase</a></li>
+            <li><a href="#futureForm">Plan for a Future Event</a></li>
+        </ul>
         <div id="ridingForm">
             <label> Riding Form
-                <button id="submitRide">Submit</button>
+                <button id="submitRide" class="dayPick">Submit</button>
                 <label>Day
                     <input type="text" id="dayRide" class="formInput">
                 </label>
                 <label>Hours
                     <input type="text" id="hours" class="formInput">
                 </label>
+
                 <label>Discipline
                     <input type="text" id="discipline" class="formInput">
                 </label>
+
                 <label>Notes
                     <input type="text" id="notes" class="formInput">
                 </label>
             </label>
         </div>
-
         <br>
-
-
         <div id="purchaseForm">
             <label>Purchase Form
-                <button id="submitPurchase">Submit</button>
+                <button id="submitPurchase" class="dayPick">Submit</button>
                 <label>Day:
                     <input type="text" id="dayPurchase" class="formInput">
                 </label>
@@ -60,6 +69,20 @@ Filename:final.html
                     <input type="text" id="price" class="formInput">
                 </label>
                 <label>Quantity:
+                    <input type="text" id="quantity" class="formInput">
+                </label>
+            </label>
+        </div>
+        <div id="futureForm">
+            <label>Future Event/Show
+                <button id="submitFuture" class="dayPick">submit</button>
+                <label>Day:
+                    <input type="text" id="dayEvent" class="formInput">
+                </label>
+                <label>Start Time:
+                    <input type="text" id="time" class="formInput">
+                </label>
+                <label>Details:
                     <input type="text" id="quantity" class="formInput">
                 </label>
             </label>

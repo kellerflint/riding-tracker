@@ -1,21 +1,65 @@
-let calendarDate = new Date('November 29, 2018 03:24:00');
+let calendarDate = new Date(Date.now());
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
 
 window.onload = run;
 
 function run() {
-    $("#lastMonth").on("click", lastMonth)
-    $("#nextMonth").on("click", nextMonth)
+
+    displayDate();
+    // Add event listeners
+    $("#lastMonth").on("click", lastMonth);
+    $("#nextMonth").on("click", nextMonth);
+    $("#calendarDate").on("change", newDate);
+
+    // Jquery UI
+    $(function () {
+        $("#dayRide").datepicker();
+        $("#dayPurchase").datepicker();
+        $("#dayEvent").datepicker();
+    });
+
+    $(function () {
+        var availableTags = [
+            "Western",
+            "Dressage",
+            "English",
+            "Jumping",
+            "Bareback",
+            "Western Equitation",
+            "Western Pleasure",
+            "Hunter Hack",
+            "Hack",
+            "Dressage Hack",
+            "Western Hack",
+        ];
+        $("#discipline").autocomplete({
+            source: availableTags
+        });
+    });
+    $(function () {
+        $("#form").tabs();
+    });
+
+    $(function () {
+        $("#calendarDate").datepicker();
+    });
+
+
+
     generateCalendar();
 }
 
 function generateCalendar() {
-    buildDayElements(calendarDate);
+    buildDayElements();
     //buildMonth
 }
 
 // Builds day DOM elements and adds them to the calendar div
-function buildDayElements(date) {
-    let days = getMonthDays(date)
+function buildDayElements() {
+    $("#calendar").html("");
+    let days = getMonthDays(calendarDate);
     for (let i = 1; i <= days; i++) {
         let div = $("<div><div>").addClass("day-div");
         let label = $("<h4></h4>").addClass("day-label");
@@ -31,28 +75,56 @@ function buildDayElements(date) {
         div.append(innerDiv);
         $("#calendar").append(div);
     }
+
 }
 
 // Given current date, returns number of days in the month
 function getMonthDays(date) {
     let currentMonth = date.getMonth();
-
+    let monthDate = new Date(date);
     // Sets date to first date of the month
-    date.setDate(date.getDate() - date.getDate() + 1);
+    monthDate.setDate(monthDate.getDate() - monthDate.getDate() + 1);
     let days = 0;
 
     // Increments days until the month changes
-    while (currentMonth == date.getMonth()) {
-        date.setDate(date.getDate() + 1);
+    while (currentMonth == monthDate.getMonth()) {
+        monthDate.setDate(monthDate.getDate() + 1);
         days++;
     }
     return days;
 }
 
+// Moves the calendar date back one month
 function lastMonth() {
-    console.log("last");
+    calendarDate.setMonth(calendarDate.getMonth() - 1);
+    $("#calendarDate").val("");
+    displayDate();
+    buildDayElements();
 }
 
+// Moves the calendar date forward one month
 function nextMonth() {
-    console.log("next");
+    calendarDate.setMonth(calendarDate.getMonth() + 1);
+    $("#calendarDate").val("");
+    displayDate();
+    buildDayElements();
 }
+
+function displayDate() {
+    let month = monthNames[calendarDate.getMonth()];
+    let text = ", ";
+    let year = calendarDate.getFullYear();
+    $("#date").text(month + text + year);
+}
+
+function newDate() {
+    calendarDate = new Date($("#calendarDate").val());
+    displayDate();
+    buildDayElements();
+}
+
+//open and close forms
+$("#getForms").on("click", function () {
+    $("#form").toggle();
+});
+
