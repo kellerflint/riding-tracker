@@ -5,6 +5,7 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 
 window.onload = run;
 
+// On window load creates event listeners and runs setup functions
 function run() {
 
     displayDate();
@@ -13,7 +14,13 @@ function run() {
     $("#nextMonth").on("click", nextMonth);
     $("#calendarDate").on("change", newDate);
 
-    // Jquery UI
+    setJQueryElements();
+
+    generateCalendar();
+}
+
+// Sets up JQuery UI elements
+function setJQueryElements() {
     $(function () {
         $("#dayRide").datepicker();
         $("#dayPurchase").datepicker();
@@ -46,9 +53,6 @@ function run() {
         $("#calendarDate").datepicker();
     });
 
-
-
-    generateCalendar();
 }
 
 function generateCalendar() {
@@ -102,7 +106,7 @@ function lastMonth() {
     buildDayElements();
 }
 
-// Moves the calendar date forward one month
+// Changes the calendar date forward one month
 function nextMonth() {
     calendarDate.setMonth(calendarDate.getMonth() + 1);
     $("#calendarDate").val("");
@@ -110,6 +114,7 @@ function nextMonth() {
     buildDayElements();
 }
 
+// Displays the month and year that the calendar is displaying
 function displayDate() {
     let month = monthNames[calendarDate.getMonth()];
     let text = ", ";
@@ -117,6 +122,7 @@ function displayDate() {
     $("#date").text(month + text + year);
 }
 
+// Changes the calendar date to the selected date
 function newDate() {
     calendarDate = new Date($("#calendarDate").val());
     displayDate();
@@ -127,4 +133,3 @@ function newDate() {
 $("#getForms").on("click", function () {
     $("#form").toggle();
 });
-

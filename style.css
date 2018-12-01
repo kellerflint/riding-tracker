@@ -15,12 +15,13 @@ body {
 
 .day-label {
     margin: 0px;
-    background-color: red;
+    background-color: lightcoral;
 }
 
 .day-inner-div {
     margin: 0px;
-    background-color: blue;
+    background-color: lightblue;
+    height: 100px;
 }
 
 
@@ -30,7 +31,6 @@ body {
 }
 
 #calendar {
-    border: 3px solid black;
     border-radius: 10px;
     margin: 2%;
 }
