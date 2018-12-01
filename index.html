@@ -2,8 +2,8 @@
 
 <!--
 Author: Samantha DeSmul and Keller Flint
-Date:11/29/2018
-Filename:final.html
+Date: 11/29/2018
+Filename: final.html
 -->
 <html>
 
@@ -11,11 +11,9 @@ Filename:final.html
     <meta charset="utf-8">
     <title>Riding Calendar</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui.min.css">
+    <script src="external/jquery/jquery.js"></script>
+    <script src="jquery-ui.min.js"></script>
 </head>
 
 <body>
@@ -46,7 +44,7 @@ Filename:final.html
                     <input type="text" id="dayRide" class="formInput">
                 </label>
                 <label>Hours
-                    <input type="text" id="hours" class="formInput">
+                    <input type="number" step=".25" id="hours" class="formInput">
                 </label>
 
                 <label>Discipline
