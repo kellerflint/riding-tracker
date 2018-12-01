@@ -4,6 +4,68 @@ body {
     
 }
 
+.day-div {
+    text-align: center;
+    display: inline-block;
+    border: 1px solid green;
+    width: 13.5%;
+    padding: 0%;
+    margin: .2%;
+}
+
+.day-label {
+    margin: 0px;
+    background-color: red;
+}
+
+.day-inner-div {
+    margin: 0px;
+    background-color: blue;
+}
+
+
+.formInput{
+    background: aliceblue;
+    margin: 1%;
+}
+
+#calendar {
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 2%;
+}
+
+#logButton{
+    padding: 1%;
+}
+
+#form {
+    font-family: monospace;
+    width: 70%;
+    margin-left: 15%;
+}
+
+#ridingForm{
+    background: lightgray;
+    border: solid;
+    border-color: cornflowerblue;
+    margin-bottom: 2%;
+}
+
+#purchaseForm{
+    background: lightgray;
+    border: solid;
+    border-color: cornflowerblue;
+    margin-bottom: 2%;
+}
+
+#futureForm{
+    background: lightgray;
+    border: solid;
+    border-color: cornflowerblue;
+    margin-bottom: 2%;
+}
+
 #head-wrapper {
 
 }
@@ -18,56 +80,4 @@ body {
 
 #title {
 
-}
-
-.day-div {
-    text-align: center;
-    display: inline-block;
-    border: 1px solid green;
-    width: 8%;
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-
-.day-inner-div {
-    background-color: blue;
-}
-
-#calendar {
-    border: 3px solid black;
-    border-radius: 10px;
-    margin: 2%;
-    
-}
-#logButton{
-    padding: 1%;
-}
-#form {
-    font-family: monospace;
-    width: 70%;
-    margin-left: 15%;
-}
-.formInput{
-    background: aliceblue;
-    margin: 1%;
-}
-#ridingForm{
-    background: lightgray;
-    border: solid;
-    border-color: cornflowerblue;
-    margin-bottom: 2%;
-}
-#purchaseForm{
-    background: lightgray;
-    border: solid;
-    border-color: cornflowerblue;
-    margin-bottom: 2%;
-}
-#futureForm{
-    background: lightgray;
-    border: solid;
-    border-color: cornflowerblue;
-    margin-bottom: 2%;
 }
