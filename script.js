@@ -89,6 +89,8 @@ function buildDayElements() {
         let eventId = getEvent(i);
         if (typeof eventId != "undefined") {
             innerDiv.text(data[eventId].discipline);
+        } else {
+            innerDiv.text("N/A");
         }
 
         div.append(label);

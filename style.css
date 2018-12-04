@@ -144,17 +144,18 @@ form label {
     }
 }
 
-@media (min-width: 601px) and (max-width: 1120px) {
+@media (min-width: 601px) and (max-width: 825px) {
     .col-25 {
         text-align:right;
-        color:red;
     }
 
 }
-@media (min-width: 1121px) and (max-width: 1840px) {
+@media (min-width: 826px) and (max-width: 2560px) {
     .col-25 {
         text-align:right;
         color:blue;
+        font-size: 1em;
+
     }
 
     .formInput {
