@@ -5,11 +5,37 @@ body {
 }
 
 /* Calendar */
-
+#lastMonth{
+    background-color: lightcoral;
+    border: none;
+    color:black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+#nextMonth{
+    background-color: lightcoral;
+    border: none;
+    color:black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
 .day-div {
     text-align: center;
     display: inline-block;
-    border: 1px solid green;
     width: 13.5%;
     padding: 0%;
     margin: .2%;
@@ -36,6 +62,7 @@ body {
 
 #calendarDate {
     margin-bottom: 10px;
+    height: 48px;
 }
 
 /* FORM */
@@ -43,22 +70,51 @@ body {
 #logButton{
     padding: 1%;
 }
+/*styling for tabs */
+.ui-tabs, .ui-tabs-, li.ui-tabs-active, .ui-tabs-anchor{
+    cursor: text;
+    border-color: gray;
+    background: lightblue;
+    color: black;
+}
+.ui-tabs .ui-tabs-nav {
+    margin: 0;
+    padding: .2em .2em 0;
+    background: lightcoral;
+    border: solid;
+    border-color: gray;
+}
 
 .formInput{
-    background: aliceblue;
+    background: lightblue;
     margin: 1%;
 }
 
+#getForms{
+    background-color: lightcoral;
+    border: none;
+    color:black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
 #form {
     font-family: monospace;
     width: 55%;
     margin-left: 25%;
+    display: none;
 }
 
 #ridingForm{
-    background: lightgray;
+    background: gray;
     border: solid;
-    border-color: cornflowerblue;
+    border-color: lightcoral;
     margin-bottom: 2%;
 
 }
@@ -81,9 +137,9 @@ button:hover {
     opacity: 1.0;
 }
 button.submitButton{
-    background-color: #f4511e;
+    background-color: lightcoral;
     border: none;
-    color: white;
+    color:black;
     padding: 16px 32px;
     text-align: center;
     font-size: 16px;
@@ -96,19 +152,18 @@ button.submitButton{
 }
 
 #purchaseForm{
-    background: lightgray;
+    background: gray;
     border: solid;
-    border-color: cornflowerblue;
+    border-color: lightcoral;
     margin-bottom: 2%;
 }
 
 #futureForm{
-    background: lightgray;
+    background: gray;
     border: solid;
-    border-color: cornflowerblue;
+    border-color: lightcoral;
     margin-bottom: 2%;
 }
-
 /* Form Columns For Responsive */
 
 form label {
@@ -161,7 +216,7 @@ form label {
 @media (min-width: 826px) and (max-width: 2560px) {
     .col-25 {
         text-align:right;
-        color:blue;
+        color:black;
         font-size: 1em;
 
     }
@@ -170,4 +225,29 @@ form label {
         width: 100%;
     }
 
+}
+
+/* forcast */
+
+#forcast {
+    display: inline-block;
+
+position: absolute;
+
+top: 15%;
+
+left: 6.5%;
+
+margin-bottom: 11px;
+
+width: 30;
+}
+
+#today {
+    display: inline-block;
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    margin-bottom: 11px;
+    width: 30;
 }

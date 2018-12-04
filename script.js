@@ -2,6 +2,9 @@ let data = [];
 
 let loaded = false;
 
+const API_KEY = "dacd9a6a6fbc0931684dd14c55bc5163";
+const API_URL = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=";
+
 let calendarDate = new Date(Date.now());
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -26,8 +29,14 @@ function run() {
     $("#lastMonth").on("click", lastMonth);
     $("#nextMonth").on("click", nextMonth);
     $("#calendarDate").on("change", newDate);
+    $('#rideForm').submit(function () {
+        addEvent();
+        return false;
+    });
 
     setJQueryElements();
+
+    getWeather();
 
     displayDate();
 
@@ -73,6 +82,7 @@ function setJQueryElements() {
     });
 }
 
+
 // Builds day DOM elements and adds them to the calendar div
 function buildDayElements() {
     $("#calendar").html("");
@@ -105,7 +115,6 @@ function getEvent(day) {
     for (let i = 0; i < data.length; i++) {
         if (calendarDate.getMonth() == data[i].date.getMonth() &&
             data[i].date.getDate() == day) {
-            console.log("DIT IT");
             return i;
         }
     }
@@ -176,5 +185,33 @@ function importData() {
 
         loaded = true;
     });
+}
+
+function addEvent() {
+    console.log("ran");
+    let event = {
+        date: new Date($("#dayRide").val()),
+        hours: $("#hours").val(),
+        discipline: $("#discipline").val(),
+        notes: $("#notes").val()
+    };
+    data.push(event);
+    console.log(event);
     console.log(data);
+    buildDayElements();
+}
+
+function getWeather() {
+    $.simpleWeather({
+        location: "Auburn, WA",
+        unit: "f",
+        success: function (weather) {
+            $("#forcast").attr("src", weather.image);
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+
+
 }

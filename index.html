@@ -17,17 +17,21 @@ This site is designed to track information related to horseback riding.
     <link rel="stylesheet" href="jquery-ui.min.css">
     <script src="external/jquery/jquery.js"></script>
     <script src="jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
 </head>
 
 <body>
 
     <h1 id="title">Riding Calendar</h1>
     <div id="calendar-wrapper">
-
-        <h2 id="date">date</h2>
-        <button id="lastMonth">Last</button>
-        <input type="text" id="calendarDate">
-        <button id="nextMonth">Next</button>
+        <div>
+            <h2 id="today">Todays Weather</h2>
+            <img id="forcast">
+            <h2 id="date">date</h2>
+            <button id="lastMonth">Last</button>
+            <input type="text" id="calendarDate">
+            <button id="nextMonth">Next</button>
+        </div>
 
 
         <div id="calendar"></div>
@@ -48,7 +52,7 @@ This site is designed to track information related to horseback riding.
         <br>
         <!-- forms -->
         <div id='ridingForm' class="container">
-            <form action="/action_page.php">
+            <form id="rideForm">
                 <div class="row">
                     <div class="col-25">
                         <label for="dayRide">Day:</label>
@@ -59,7 +63,7 @@ This site is designed to track information related to horseback riding.
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="">Hours</label>
+                        <label for="">Hours:</label>
                     </div>
                     <div class="col-75">
                         <input type="number" step=".25" id="hours" class="formInput">
@@ -67,39 +71,35 @@ This site is designed to track information related to horseback riding.
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <!-- <label for="country">Country</label> -->
 
-                        <label for="dicipline">Discipline</label>
+
+                        <label for="dicipline">Discipline:</label>
 
                     </div>
                     <div class="col-75">
-                        <!-- <select id="country" name="country">
-                            <option value="australia">Australia</option>
-                            <option value="canada">Canada</option>
-                            <option value="usa">USA</option>
-                        </select>-->
+
                         <input type="text" id="discipline" class="formInput">
 
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="notes">Notes</label>
+                        <label for="notes">Notes:</label>
                     </div>
                     <div class="col-75">
 
                         <input type="text" id="notes" class="formInput">
-                        <!-- <textarea id="notes" name="notes" type="text" placeholder="Write something.."></textarea> -->
+
                     </div>
                 </div>
                 <div class="row">
-                    <button type="submit" value="Submit" class="submitButton">Submit</button>
+                    <button type="submit" value="Submit" class="submitButton" id="rideSubmit">Submit</button>
                 </div>
             </form>
         </div>
 
         <div id="purchaseForm" class="container">
-            <form action="/purchasePage.php">
+            <form>
                 <div class="row">
                     <div class="col-25">
                         <label for="dayPurchase">Day:</label>
@@ -113,7 +113,7 @@ This site is designed to track information related to horseback riding.
                         <label for="price">Price:</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="price" class="formInput">
+                        <input type="number" step="5" id="price" class="formInput">
                     </div>
                 </div>
                 <div class="row">
@@ -123,7 +123,7 @@ This site is designed to track information related to horseback riding.
                     </div>
                     <div class="col-75">
 
-                        <input type="text" id="quantity" class="formInput">
+                        <input type="number" step="1" id="quantity" class="formInput">
                     </div>
 
                 </div>
@@ -134,7 +134,7 @@ This site is designed to track information related to horseback riding.
             </form>
         </div>
         <div id="futureForm" class="container">
-            <form action="/action_page.php">
+            <form>
                 <div class="row">
                     <div class="col-25">
                         <label for="submitFuture">Day:</label>
@@ -151,17 +151,17 @@ This site is designed to track information related to horseback riding.
                         <label for="time">Start Time:</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="time" class="formInput">
+                        <input type="time" id="time" class="formInput">
 
                     </div>
 
                 </div>
                 <div class="row">
                     <div class="col-25">
-                        <label for="quantity"> Quantity:</label>
+                        <label for="details"> Details:</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="quantity" class="formInput">
+                        <input type="text" id="details" class="formInput">
                     </div>
 
                 </div>
