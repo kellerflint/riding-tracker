@@ -40,53 +40,133 @@ TODO: Description here some change
             <li><a href="#purchaseForm">Log a Purchase</a></li>
             <li><a href="#futureForm">Plan for a Future Event</a></li>
         </ul>
-        <div id="ridingForm">
-            <label> Riding Form
-                <button id="submitRide" class="dayPick">Submit</button>
-                <label>Day
-                    <input type="text" id="dayRide" class="formInput">
-                </label>
-                <label>Hours
-                    <input type="number" step=".25" id="hours" class="formInput">
-                </label>
 
-                <label>Discipline
-                    <input type="text" id="discipline" class="formInput">
-                </label>
-
-                <label>Notes
-                    <input type="text" id="notes" class="formInput">
-                </label>
-            </label>
-        </div>
         <br>
-        <div id="purchaseForm">
-            <label>Purchase Form
-                <button id="submitPurchase" class="dayPick">Submit</button>
-                <label>Day:
-                    <input type="text" id="dayPurchase" class="formInput">
-                </label>
-                <label>Price:
-                    <input type="text" id="price" class="formInput">
-                </label>
-                <label>Quantity:
-                    <input type="text" id="quantity" class="formInput">
-                </label>
-            </label>
+        <!-- forms -->
+        <div id='ridingForm' class="container">
+            <form action="/action_page.php">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="dayRide">Day:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="dayRide" class="formInput">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="">Hours</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" step=".25" id="hours" class="formInput">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <!-- <label for="country">Country</label> -->
+
+                        <label for="dicipline">Discipline</label>
+
+                    </div>
+                    <div class="col-75">
+                        <!-- <select id="country" name="country">
+                            <option value="australia">Australia</option>
+                            <option value="canada">Canada</option>
+                            <option value="usa">USA</option>
+                        </select>-->
+                        <input type="text" id="discipline" class="formInput">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="notes">Notes</label>
+                    </div>
+                    <div class="col-75">
+
+                        <input type="text" id="notes" class="formInput">
+                        <!-- <textarea id="notes" name="notes" type="text" placeholder="Write something.."></textarea> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" value="Submit" class="submitButton">Submit</button>
+                </div>
+            </form>
         </div>
-        <div id="futureForm">
-            <label>Future Event/Show
-                <button id="submitFuture" class="dayPick">submit</button>
-                <label>Day:
-                    <input type="text" id="dayEvent" class="formInput">
-                </label>
-                <label>Start Time:
-                    <input type="text" id="time" class="formInput">
-                </label>
-                <label>Details:
-                    <input type="text" id="quantity" class="formInput">
-                </label>
-            </label>
+
+        <div id="purchaseForm" class="container">
+            <form action="/purchasePage.php">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="dayPurchase">Day:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="dayPurchase" class="formInput">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="price">Price:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="price" class="formInput">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+
+                        <label>Quantity:</label>
+                    </div>
+                    <div class="col-75">
+
+                        <input type="text" id="quantity" class="formInput">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <button type="submit" value="Submit" class="submitButton">Submit</button>
+
+                </div>
+            </form>
+        </div>
+        <div id="futureForm" class="container">
+            <form action="/action_page.php">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="submitFuture">Day:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="dayEvent" class="formInput">
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="time">Start Time:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="time" class="formInput">
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="quantity"> Quantity:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="quantity" class="formInput">
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <button type="submit" value="Submit" class="submitButton">Submit</button>
+                </div>
+
+
         </div>
     </div>
 

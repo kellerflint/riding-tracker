@@ -1,14 +1,27 @@
+let data = [];
+
+let loaded = false;
+
 let calendarDate = new Date(Date.now());
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
+
+// My terrible fix for AJAX asynchronous nonsense
+let loadInterval = setInterval(function () {
+    if (loaded) {
+        buildDayElements();
+        clearInterval(loadInterval);
+    }
+}, 200);
 
 window.onload = run;
 
 // On window load creates event listeners and runs setup functions
 function run() {
 
-    displayDate();
+    importData();
+
     // Add event listeners
     $("#lastMonth").on("click", lastMonth);
     $("#nextMonth").on("click", nextMonth);
@@ -16,7 +29,8 @@ function run() {
 
     setJQueryElements();
 
-    generateCalendar();
+    displayDate();
+
 }
 
 // Sets up JQuery UI elements
@@ -53,11 +67,10 @@ function setJQueryElements() {
         $("#calendarDate").datepicker();
     });
 
-}
-
-function generateCalendar() {
-    buildDayElements();
-    //buildMonth
+    //open and close forms
+    $("#getForms").on("click", function () {
+        $("#form").toggle();
+    });
 }
 
 // Builds day DOM elements and adds them to the calendar div
@@ -73,6 +86,10 @@ function buildDayElements() {
 
         // TODO: Check for events and add their content here
         // Append whatever is generated to the innerDiv (pass and return the DOM node?)
+        if (getEvent() != -1) {
+
+        }
+
         innerDiv.text("PLACEHOLDER TEXT");
 
         div.append(label);
@@ -81,6 +98,17 @@ function buildDayElements() {
     }
 
 }
+
+function getEvent() {
+    for (let i = 0; i < data.length; i++) {
+        if (calendarDate.getMonth() == data[i].date.getMonth()) {
+            return i;
+        } else {
+            return -1;
+        }
+    }
+}
+
 
 // Given current date, returns number of days in the month
 function getMonthDays(date) {
@@ -129,7 +157,19 @@ function newDate() {
     buildDayElements();
 }
 
-//open and close forms
-$("#getForms").on("click", function () {
-    $("#form").toggle();
-});
+function importData() {
+    $.getJSON("example-data.json", function (result) {
+        $.each(result, function (index, item) {
+            let event = {
+                date: new Date(item.Date),
+                hours: item.Hours,
+                discipline: item.Discipline,
+                notes: item.Notes
+            };
+            data.push(event);
+        });
+
+        loaded = true;
+    });
+    console.log(data);
+}

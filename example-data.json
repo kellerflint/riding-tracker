@@ -1,0 +1,14 @@
+[
+    {
+        "Date": "2018-12-3T1:00",
+        "Hours": 3,
+        "Discipline": "Jumping",
+        "Notes": "did some things"
+    },
+    {
+        "Date": "2018-12-1T1:00",
+        "Hours": 2,
+        "Discipline": "Western",
+        "Notes": "did some other things"
+    }
+]
