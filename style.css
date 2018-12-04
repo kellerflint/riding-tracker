@@ -4,6 +4,8 @@ body {
     
 }
 
+/* Calendar */
+
 .day-div {
     text-align: center;
     display: inline-block;
@@ -25,15 +27,22 @@ body {
 }
 
 
-#calendar {
-    border-radius: 10px;
+#calendar-wrapper {
+    border-radius: 20px;
     margin: 2%;
+    background-color: grey;
+    padding: 10px;
 }
+
+#calendarDate {
+    margin-bottom: 10px;
+}
+
+/* FORM */
 
 #logButton{
     padding: 1%;
 }
-/*FORM*/
 
 .formInput{
     background: aliceblue;
@@ -102,7 +111,6 @@ button.submitButton{
 
 /* Form Columns For Responsive */
 
-
 form label {
     padding: 12px 12px 12px 0;
     display: inline-block;
@@ -161,20 +169,5 @@ form label {
     .formInput {
         width: 100%;
     }
-
-}
-#head-wrapper {
-
-}
-
-#lastMonth {
-
-}
-
-#nextMonth {
-
-}
-
-#title {
 
 }

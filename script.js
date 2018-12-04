@@ -100,11 +100,9 @@ function buildDayElements() {
 
 }
 
+// Return the data index for an event that happened on the given day
 function getEvent(day) {
     for (let i = 0; i < data.length; i++) {
-        console.log(i);
-        console.log("day passed: " + day);
-        console.log("date day: " + data[i].date.getDate());
         if (calendarDate.getMonth() == data[i].date.getMonth() &&
             data[i].date.getDate() == day) {
             console.log("DIT IT");
@@ -118,6 +116,7 @@ function getEvent(day) {
 function getMonthDays(date) {
     let currentMonth = date.getMonth();
     let monthDate = new Date(date);
+
     // Sets date to first date of the month
     monthDate.setDate(monthDate.getDate() - monthDate.getDate() + 1);
     let days = 0;
@@ -161,6 +160,8 @@ function newDate() {
     buildDayElements();
 }
 
+// Imports events into data array from JSON file
+// In an ideal world we'd get this from a real database for this
 function importData() {
     $.getJSON("example-data.json", function (result) {
         $.each(result, function (index, item) {
