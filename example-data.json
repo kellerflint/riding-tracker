@@ -6,9 +6,15 @@
         "Notes": "did some things"
     },
     {
-        "Date": "2018-12-1T1:00",
+        "Date": "2018-12-8T1:00",
         "Hours": 2,
         "Discipline": "Western",
         "Notes": "did some other things"
+    },
+    {
+        "Date": "2018-12-6T1:00",
+        "Hours": 1,
+        "Discipline": "Bareback",
+        "Notes": "did yet another thing"
     }
 ]

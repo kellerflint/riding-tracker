@@ -86,11 +86,10 @@ function buildDayElements() {
 
         // TODO: Check for events and add their content here
         // Append whatever is generated to the innerDiv (pass and return the DOM node?)
-        if (getEvent() != -1) {
-
+        let eventId = getEvent(i);
+        if (typeof eventId != "undefined") {
+            innerDiv.text(data[eventId].discipline);
         }
-
-        innerDiv.text("PLACEHOLDER TEXT");
 
         div.append(label);
         div.append(innerDiv);
@@ -99,12 +98,15 @@ function buildDayElements() {
 
 }
 
-function getEvent() {
+function getEvent(day) {
     for (let i = 0; i < data.length; i++) {
-        if (calendarDate.getMonth() == data[i].date.getMonth()) {
+        console.log(i);
+        console.log("day passed: " + day);
+        console.log("date day: " + data[i].date.getDate());
+        if (calendarDate.getMonth() == data[i].date.getMonth() &&
+            data[i].date.getDate() == day) {
+            console.log("DIT IT");
             return i;
-        } else {
-            return -1;
         }
     }
 }
