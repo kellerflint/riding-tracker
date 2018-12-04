@@ -180,9 +180,10 @@ function importData() {
                 discipline: item.Discipline,
                 notes: item.Notes
             };
+            console.log(event);
+            console.log(data);
             data.push(event);
         });
-
         loaded = true;
     });
 }
@@ -196,8 +197,7 @@ function addEvent() {
         notes: $("#notes").val()
     };
     data.push(event);
-    console.log(event);
-    console.log(data);
+
     buildDayElements();
 }
 
