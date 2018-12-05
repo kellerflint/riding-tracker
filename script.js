@@ -108,10 +108,10 @@ function buildDayElements() {
                             innerDiv.append("<p>Notes: " + data[c].notes + "</p>");
                         }
                     }
-                    innerDiv.val()
 
                     // Add reset button. Anonymous function resets data
-                    resetBtn = $("<button>return</button>").on("click", function () {
+                    resetBtn = $("<button>return</button>").addClass("resetBtn");
+                    resetBtn.on("click", function () {
                         div.removeClass("expanded-day");
                         label.children().last().remove();
 

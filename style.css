@@ -33,6 +33,11 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+
+.resetBtn {
+    margin-left: 40%;
+}
+
 .day-div {
     text-align: center;
     display: inline-block;
