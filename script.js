@@ -2,9 +2,6 @@ let data = [];
 
 let loaded = false;
 
-const API_KEY = "dacd9a6a6fbc0931684dd14c55bc5163";
-const API_URL = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=";
-
 let calendarDate = new Date(Date.now());
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -94,11 +91,41 @@ function buildDayElements() {
 
         label.text(i);
 
-        // TODO: Check for events and add their content here
-        // Append whatever is generated to the innerDiv (pass and return the DOM node?)
+        // Append data at index to the innerDiv
         let eventId = getEvent(i);
         if (typeof eventId != "undefined") {
             innerDiv.text(data[eventId].discipline);
+
+            // Expanding div
+
+            innerDiv.on("click", function () {
+                if (!div.hasClass("expanded-day")) {
+                    div.addClass("expanded-day");
+
+                    for (let c in data) {
+                        if (innerDiv.text() == data[c].discipline) {
+                            innerDiv.append("<p>Hours: " + data[c].hours + "</p>");
+                            innerDiv.append("<p>Notes: " + data[c].notes + "</p>");
+                        }
+                    }
+                    innerDiv.val()
+
+                    // Add reset button. Anonymous function resets data
+                    resetBtn = $("<button>return</button>").on("click", function () {
+                        div.removeClass("expanded-day");
+                        label.children().last().remove();
+
+                        // Removes additional info
+                        for (let i = 0; i < 2; i++) {
+                            innerDiv.children().last().remove();
+                        }
+
+                    });
+                    label.append(resetBtn);
+                }
+            });
+
+
         } else {
             innerDiv.text("N/A");
         }
@@ -212,6 +239,4 @@ function getWeather() {
             console.log(error);
         }
     });
-
-
 }

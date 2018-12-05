@@ -41,6 +41,14 @@ body {
     margin: .2%;
 }
 
+.expanded-day {
+    text-align: left;
+    display: inline-block;
+    width: 27%;
+    padding: 0%;
+    margin: .2%;
+}
+
 .day-label {
     margin: 0px;
     background-color: lightcoral;

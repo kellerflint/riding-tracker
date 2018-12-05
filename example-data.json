@@ -3,18 +3,18 @@
         "Date": "2018-12-3T1:00",
         "Hours": 3,
         "Discipline": "Jumping",
-        "Notes": "did some things"
+        "Notes": "Example notes here"
     },
     {
         "Date": "2018-12-8T1:00",
         "Hours": 2,
         "Discipline": "Western",
-        "Notes": "did some other things"
+        "Notes": "Example notes there"
     },
     {
         "Date": "2018-12-6T1:00",
         "Hours": 1,
         "Discipline": "Bareback",
-        "Notes": "did yet another thing"
+        "Notes": "Some more example notes"
     }
 ]
